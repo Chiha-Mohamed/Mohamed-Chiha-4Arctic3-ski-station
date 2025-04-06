@@ -9,4 +9,5 @@ public interface InterfaceInstructorService {
     Instructor addInstructor(Instructor instructor);
     Instructor updateInstructor(Instructor instructor);
     Instructor retrieveInstructor(Long numInstructor);
+    Instructor addInstructorAndAssignToCourse(Instructor instructor, Long numCourse);
 }

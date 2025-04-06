@@ -1,5 +1,6 @@
 package SkiStation.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -26,7 +27,8 @@ public class Instructor implements Serializable {
     String lastName;
     LocalDate dateOfHire;
 
-    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    List<Course> courses;
+    @ManyToOne
+    @JoinColumn(name = "course_id") // Déclaration de la relation ManyToOne
+    @JsonBackReference
+    Course course;
 }

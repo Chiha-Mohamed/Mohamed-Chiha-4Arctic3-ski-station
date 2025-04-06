@@ -41,6 +41,7 @@ public class Skier implements Serializable {
             joinColumns = @JoinColumn(name = "skier_id"),
             inverseJoinColumns = @JoinColumn(name = "piste_id")
     )
+
     List<Piste> pistes;
 
     public String getFirstName() {
@@ -50,4 +51,5 @@ public class Skier implements Serializable {
     public String getLastName() {
         return lastName;
     }
+
 }
